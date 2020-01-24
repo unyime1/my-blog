@@ -1,0 +1,237 @@
+:root{
+    --main-white:  beige;
+    --main-blue:  rgb(10, 64, 114); 
+    --minor-blue: rgb(7, 77, 143); 
+    --intro-font: 'Raleway', sans-serif;
+}
+
+body{
+    background-color: var(--main-white); 
+}
+
+h1{
+    font-family: var(--intro-font);
+    font-weight: 900;
+    text-align: center;
+}
+
+h2{
+    font-family: var(--intro-font);
+    font-weight: 700;
+    text-align: center;
+}
+
+.special{
+    font-family: var(--intro-font);
+    font-weight: 400;
+    text-align: center;
+}
+
+.navbar-texts{
+    position: relative;
+    font-weight: bold;
+    font-style: italic;
+    margin-left: auto;
+    margin-right: 5px;
+    font-size: 1.5 rem !important;
+}
+
+
+.nav-link{
+    color: var(--main-white) !important;
+    padding-right: 40px !important;
+}
+
+
+.navbar-brand{
+    color: var(--main-white) !important;
+    font-size: 1.5 rem !important;
+}
+
+nav{
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 5;
+}
+
+.navbar-toggler-icon{
+    color: white !important;
+}
+
+
+/* Portfolio Section */
+
+#welcome-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    
+}
+  
+
+#projects{
+    background-color: var(--minor-blue); 
+    width: 100%;
+    text-align: center;
+    padding: 5rem 2rem;
+    
+}
+
+.project-intro{
+    text-align: center;
+    color: var(--main-white);
+    text-decoration: underline;
+    padding-bottom: 15px;
+
+}
+
+#contact-section{
+    background-color: var( --main-white);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 80vh;
+    padding: 0 2rem;
+}
+
+.my-projects{
+    justify-content: center;
+    align-items: center;
+}
+.btn{
+    margin-top: 20px !important;
+}
+
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: auto px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-twitter {
+    background: #55ACEE;
+    color: white;
+}
+
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+
+.fa-pinterest {
+    background: #cb2027;
+    color: white;
+}
+
+.fa-github {
+    background: #081118;
+    color: white;
+}
+
+  .fa-at {
+    background: #081118;
+    color: white;
+}
+
+.card{
+    z-index: 2;
+}
+
+@media (max-width: 700px) {
+    .project-tile{
+        padding-top: 20px !important;
+    }
+}
+
+
+/* Blog Section */
+.blog-nav-header{
+    font-family: var(--intro-font);
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.container{
+    padding-top: 90px !important;
+}
+
+.my-post-card{
+    font-weight: normal; 
+    font-size: 18;
+}
+
+.my-post-btn{
+    background-color: var(--main-blue);
+}
+
+.my-card{
+    margin-top: 10px ;
+}
+
+#document-footer{
+    background-color: var(--main-blue);
+    max-width: 100%;
+    margin-bottom: 0;
+    margin-top: 15px;
+    width: 100%;
+}
+
+#document-footer-content{
+    color: #fff;
+    font-size: 14px;
+    padding: 28px 1.5em;
+    max-width: 928px;
+    margin: 0 auto;
+}
+
+#my-footer-links{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.footer-links{
+    display: block;
+    padding: 10px;
+    flex-wrap: wrap;
+    color: var(--main-white);
+}
+
+li{
+    list-style: none;
+}
+
+.copyright{
+   text-align: center;
+}
+
+@media (max-width: 700px) {
+    #my-footer-links{
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 1000px) {
+    .card{
+        margin-left: auto;
+        margin-right: auto;
+        
+    }
+}
