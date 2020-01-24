@@ -4,7 +4,7 @@
   {% for post in posts %}
     <div class="card mb-4">
       <div class="card-body">
-        <h5 class="card-title my-post-card">{{post.title | safe}</h5>
+        <h5 class="card-title my-post-card">{{post.title | safe}}</h5>
         <p class="card-text"></p>
         <a href="{{url_for('posts.article', slug=post.slug)}}" class="btn btn-primary my-post-btn">Discover &rarr;</a>
       </div>
