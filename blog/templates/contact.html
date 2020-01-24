@@ -1,0 +1,124 @@
+{% extends 'layout.html' %}
+{% block content %}
+    
+<div class="row">
+  <div class="col-sm-12">
+    <div class="contact-mf"> 
+      <div id="contact" class="box-shadow-full">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-12">
+                  {% with messages = get_flashed_messages(with_categories=true) %}  <!-- store flashed messages and their categories in the variable messages-->
+                    {% if messages %}   <!-- if there is a flash message -->
+                      {% for category, message in messages %} <!-- loop through the messages and their categories -->
+                          <div class="alert alert-{{ category }}">
+                              {{ message }}   <!-- print the messages with the bootstrap themed category -->
+                          </div>
+                      {% endfor %}
+                    {% endif %}
+                  {% endwith %}
+                </div>
+              </div>
+            </div>
+            <!--Contact form-->
+            <div class="title-box-2">
+              <h5 class="title-left">
+                Send Message
+              </h5>
+      
+              <form method="POST" action="">
+                {{ form.hidden_tag() }}
+                <fieldset class="form-group">
+                  <div class="form-group">
+                    {{ form.name.label(class="form-control-label") }}  <!-- Print label -->
+                    {% if form.name.errors %}  <!-- If invalid data is supplied to the form-->
+                        {{ form.name(class="form-control form-control-lg is-invalid") }}   <!--Show a bootstrap theemed invalid form-->
+                        <div class="invalid-feedback">
+                            {% for error in form.name.errors %} <!--loop through the errors generated-->
+                                <span>{{ error }}</span>    <!-- Print the errors-->
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.name(class="form-control form-control-lg") }}  <!--Show this if there is no error-->
+                    {% endif %}
+                  </div>
+  
+                  <div class="form-group">
+                    {{ form.email.label(class="form-control-label") }}
+                    {% if form.email.errors %}
+                        {{ form.email(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.email.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.email(class="form-control form-control-lg") }}
+                    {% endif %}
+                  </div>
+                  
+                  <div class="form-group">
+                      {{ form.subject.label(class="form-control-label") }}
+                      {% if form.subject.errors %}
+                          {{ form.subject(class="form-control form-control-lg is-invalid") }}
+                          <div class="invalid-feedback">
+                              {% for error in form.subject.errors %}
+                                  <span>{{ error }}</span>
+                              {% endfor %}
+                          </div>
+                      {% else %}
+                          {{ form.subject(class="form-control form-control-lg") }}
+                      {% endif %}
+                  </div>
+
+                  <div class="form-group">
+                    {{ form.message.label(class="form-control-label") }}
+                    {% if form.message.errors %}
+                        {{ form.message(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.message.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.message(class="form-control form-control-lg") }}
+                    {% endif %}
+                  </div>
+                </fieldset>
+                <div class="form-group">
+                  {{ form.submit(class="btn btn-outline-info") }} <!--Submit button-->
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="title-box-2 pt-4 pt-md-0">
+              <h5 class="title-left">
+                Get in Touch
+              </h5>
+            </div>
+            <div class="more-info">
+              <p class="lead">
+                I am also reachable through any of the methods below. 
+              </p>
+              <ul class="list-ico">
+                <li><span class="ion-ios-telephone"></span>+2348162533330 (Whatsapp only)</li>
+                <li><span class="ion-email"></span>lordunyime@gmail.com</li>
+              </ul>
+            </div>
+            <div class="socials">
+              <ul>
+                <a href="https://web.facebook.com/NestorX99" class="fa fa-facebook" id="profile-link" target="_blank"> Facebook</a>
+                <a href="https://twitter.com/unyimeetim4" class="fa fa-twitter" id="profile-link" target="_blank"> Twitter</a>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--/ Intro Skew End /-->
+{% endblock content %}

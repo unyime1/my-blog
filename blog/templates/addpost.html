@@ -1,0 +1,101 @@
+{% extends 'article_post_login_layout.html' %}
+{% block content %} 
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="contact-mf">
+              <div id="contact" class="box-shadow-full">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="title-box-2">
+                      <h5 class="title-left">
+                        {{legend}}
+                      </h5>
+                    </div>
+                      <div>
+                        <form method="POST" action="">
+                          {{ form.hidden_tag() }}
+                          <fieldset class="form-group">
+                            <div class="form-group">
+                              {{ form.title.label(class="form-control-label") }}  <!-- Print label -->
+                              {% if form.title.errors %}  <!-- If invalid data is supplied to the form-->
+                                  {{ form.title(class="form-control form-control-lg is-invalid") }}   <!--Show a bootstrap theemed invalid form-->
+                                  <div class="invalid-feedback">
+                                      {% for error in form.title.errors %} <!--loop through the errors generated-->
+                                          <span>{{ error }}</span>    <!-- Print the errors-->
+                                      {% endfor %}
+                                  </div>
+                              {% else %}
+                                  {{ form.title(class="form-control form-control-lg") }}  <!--Show this if there is no error-->
+                              {% endif %}
+                            </div>
+            
+                            <div class="form-group">
+                              {{ form.subtitle.label(class="form-control-label") }}
+                              {% if form.subtitle.errors %}
+                                  {{ form.subtitle(class="form-control form-control-lg is-invalid") }}
+                                  <div class="invalid-feedback">
+                                      {% for error in form.subtitle.errors %}
+                                          <span>{{ error }}</span>
+                                      {% endfor %}
+                                  </div>
+                              {% else %}
+                                  {{ form.subtitle(class="form-control form-control-lg") }}
+                              {% endif %}
+                            </div>
+                            
+                            <div class="form-group">
+                                {{ form.author.label(class="form-control-label") }}
+                                {% if form.author.errors %}
+                                    {{ form.author(class="form-control form-control-lg is-invalid") }}
+                                    <div class="invalid-feedback">
+                                        {% for error in form.author.errors %}
+                                            <span>{{ error }}</span>
+                                        {% endfor %}
+                                    </div>
+                                {% else %}
+                                    {{ form.author(class="form-control form-control-lg") }}
+                                {% endif %}
+                            </div>
+
+                            <div class="form-group">
+                              {{ form.link.label(class="form-control-label") }}
+                              {% if form.link.errors %}
+                                  {{ form.link(class="form-control form-control-lg is-invalid") }}
+                                  <div class="invalid-feedback">
+                                      {% for error in form.link.errors %}
+                                          <span>{{ error }}</span>
+                                      {% endfor %}
+                                  </div>
+                              {% else %}
+                                  {{ form.link(class="form-control form-control-lg") }}
+                              {% endif %}
+                            </div>
+
+                            <div class="form-group">
+                              {{ form.article.label(class="form-control-label") }}
+                              {% if form.article.errors %}
+                                  {{ form.article(class="form-control form-control-lg is-invalid") }}
+                                  <div class="invalid-feedback">
+                                      {% for error in form.article.errors %}
+                                          <span>{{ error }}</span>
+                                      {% endfor %}
+                                  </div>
+                              {% else %}
+                                  {{ form.article(class="form-control form-control-lg") }}
+                              {% endif %}
+                            </div>
+                          </fieldset>
+              
+                          <div class="form-group">
+                              {{ form.submit(class="btn btn-outline-info") }} <!--Submit button-->
+                          </div>
+                        </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+{% endblock content %}

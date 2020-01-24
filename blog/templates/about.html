@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block content %}
+<!-- Blog Intro -->
+
+<div class="box-shadow-full">
+    <h5>Welcome</h5>
+    <p class="lead">
+    Hi, I'm Unyime Etim, a freelance blogger and web developer specializing in Python.
+    </p>
+    <p class="lead">
+    The software that powers this blog was written by myself as a personal project
+    using Python programming language (with the micro framework <a href="https://www.palletsprojects.com/p/flask/">Flask</a>), and now that 
+    I'm in possession of such an interesting engine I have decided to make full use of it. 
+    </p>
+    <p class="lead">
+    The topics that I'll be blogging about will be mostly related to Microsoft's Windows 10 Operating System (My favourite).
+    I will do my best to bring to you the latest how-to tutorials, news, analysis and reviews on 
+    Windows technologies in a simple to understand and unbiased way. 
+    </p>
+    <p class="lead">
+    Thanks for stopping by. If you have any question, comment, contribution, criticism, or just fancy saying hello
+    then I'll be incredibly happy to hear from you. You can contact me <a href="{{url_for('main.contact')}}">here</a>, or send an email to lordunyime@gmail.com.
+    </p>
+    
+</div>
+{% endblock content %}

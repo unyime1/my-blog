@@ -235,3 +235,29 @@ li{
         
     }
 }
+
+.box-shadow-full {
+    padding: 3rem 1.25rem;
+    position: relative;
+    background-color: #fff;
+    margin-bottom: 3rem;
+    z-index: 2;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.06), 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+.lead {
+    font-size: 16px;
+    font-weight: 300;
+    text-align: justify;
+    font-family: Arial, Helvetica, sans-serif;
+}
+  
+.article-image {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    object-fit: contain
+}

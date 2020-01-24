@@ -1,0 +1,75 @@
+{% extends 'article_post_login_layout.html' %} 
+{% block content %}
+<div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="contact-mf">
+              <div id="contact" class="box-shadow-full">
+                <div class="row">
+                  <div class="col-md-12">
+                      <div class="container">
+                        <div class="row">
+                          <div class="col-md-12">
+                            {% with messages = get_flashed_messages(with_categories=true) %}  <!-- store flashed messages and their categories in the variable messages-->
+                              {% if messages %}   <!-- if there is a flash message -->
+                                {% for category, message in messages %} <!-- loop through the messages and their categories -->
+                                    <div class="alert alert-{{ category }}">
+                                        {{ message }}   <!-- print the messages with the bootstrap themed category -->
+                                    </div>
+                                {% endfor %}
+                              {% endif %}
+                            {% endwith %}
+                          </div>
+                        </div>
+                      </div>
+                    <div class="title-box-2">
+                      <h5 class="title-left">
+                        Login
+                      </h5>
+                    </div>
+                    <div>
+                      <form method="POST" action="">
+                        {{ form.hidden_tag() }}
+                        <fieldset class="form-group">
+                          <div class="form-group">
+                            {{ form.username.label(class="form-control-label") }}  <!-- Print label -->
+                            {% if form.username.errors %}  <!-- If invalid data is supplied to the form-->
+                                {{ form.username(class="form-control form-control-lg is-invalid") }}   <!--Show a bootstrap theemed invalid form-->
+                                <div class="invalid-feedback">
+                                    {% for error in form.username.errors %} <!--loop through the errors generated-->
+                                        <span>{{ error }}</span>    <!-- Print the errors-->
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.username(class="form-control form-control-lg") }}  <!--Show this if there is no error-->
+                            {% endif %}
+                          </div>
+          
+                          <div class="form-group">
+                            {{ form.password.label(class="form-control-label") }}
+                            {% if form.password.errors %}
+                                {{ form.password(class="form-control form-control-lg is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form.password.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.password(class="form-control form-control-lg") }}
+                            {% endif %}
+                          </div>
+                        </fieldset>
+            
+                        <div class="form-group">
+                            {{ form.submit(class="btn btn-outline-info") }} <!--Submit button-->
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+{% endblock content %}
