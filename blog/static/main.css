@@ -249,7 +249,7 @@ li{
     font-size: 16px;
     font-weight: 300;
     text-align: justify;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: var(--intro-font);
 }
   
 .article-image {
@@ -260,4 +260,18 @@ li{
     margin-right: auto;
     display: block;
     object-fit: contain
+}
+
+.contact-mf {
+    margin-top: 2rem;
+}
+
+.title-box-2 {
+    margin-bottom: 3rem;
+}
+  
+.title-left {
+    font-size: 2rem;
+    position: relative;
+    margin-bottom: 3rem;
 }
