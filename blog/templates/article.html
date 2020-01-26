@@ -73,9 +73,13 @@
       <div class="col-md-6 card mb-4">
         <hr>
           {% if comment.website %}
-            <a href="http://{{comment.website}}">{{ comment.name }}</a>
+            <a href="http://{{comment.website}}">{{ comment.name }} on {{comment.date_posted.strftime('%d %b %Y')}}</a>
+            
           {% else %}
-            <p>{{comment.name}}</p>
+            <p>
+              {{comment.name}} on
+              {{comment.date_posted.strftime('%d %b %Y')}}
+            </p>
           {% endif %}
           <p>{{comment.content}}</p>
         <hr>
