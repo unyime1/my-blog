@@ -251,7 +251,7 @@ li{
 
 .lead {
     font-size: 16px;
-    font-weight: 300;
+    font-weight: normal;
     text-align: justify;
     font-family: var(--intro-font);
 }
