@@ -251,9 +251,9 @@ li{
 
 .lead {
     font-size: 16px;
-    font-weight: normal;
+    font-weight: 400 !important;
     text-align: justify;
-    font-family: var(--intro-font);
+   /* font-family: var(--intro-font); */
 }
   
 .article-image {
