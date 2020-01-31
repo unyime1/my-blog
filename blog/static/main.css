@@ -233,11 +233,17 @@ li{
 }
 
 @media (max-width: 1000px) {
-    .card{
+    /*.card{
         margin-left: auto;
         margin-right: auto;
         
     }
+    #my-banner{
+        margin-left: auto !important;
+        margin-right: auto !important;
+        
+    }
+    */
 }
 
 .box-shadow-full {
@@ -284,4 +290,8 @@ li{
     font-size: 18px !important;
     text-align: start;
 
+}
+
+#my-banner{
+    margin-bottom: 10px;
 }
