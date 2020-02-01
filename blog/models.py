@@ -1,4 +1,5 @@
 """This Module Handles the database models"""
+
 from datetime import datetime
 from blog import db, login_manager 
 from flask_login import UserMixin, current_user 

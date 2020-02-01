@@ -1,4 +1,4 @@
-"""Application Factory"""
+"""This module houses the application factory"""
 
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
