@@ -1,3 +1,5 @@
+"""This module handles the routes related to post"""
+
 from blog import db
 from flask import render_template, url_for, Blueprint, request, redirect, flash
 from blog.models import Post, Comment
@@ -12,6 +14,7 @@ posts = Blueprint('posts', __name__)
 @posts.route("/post", methods=['GET', 'POST'])
 @login_required
 def post():
+    #this function adds posts to the database
     post = Post.query.all()
     form = PostForm()
     if form.validate_on_submit():
@@ -25,7 +28,7 @@ def post():
 
 @posts.route('/posts/<slug>', methods=['GET', 'POST'])  
 def article(slug):
-    """A route that allows the user to visit a page that contains a specific post"""  
+    #this route allows the user to visit a page that contains a specific post, and contols the addition of comments  
     posts = Post.query.filter_by(slug=slug).first_or_404()
     post = Post.query.all() 
     form = CommentForm()
@@ -41,6 +44,7 @@ def article(slug):
 @posts.route('/posts/<slug>/update', methods=['GET', 'POST'])  
 @login_required
 def update_post(slug):
+    #This function handles post updates
     posts = Post.query.filter_by(slug=slug).first_or_404()
     post = Post.query.all()
     form = PostForm()
