@@ -245,7 +245,7 @@ li{
     }
     */
     #my-banner > img{
-        width: 100%;
+        width: auto;
     }
 }
 
@@ -297,13 +297,6 @@ li{
 
 #my-banner{
     margin-bottom: 10px;
-    width: auto;
-    max-width: 100%;
-    height: auto;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    object-fit: contain;
-   
+    
 }
 
