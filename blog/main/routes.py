@@ -75,3 +75,11 @@ def sitemap():
 def robots():
     #robots directive
     return render_template('robots.txt')
+
+
+
+@main.route("/resources")
+def resources():
+    #resource page
+    posts = Post.query.all()
+    return render_template('resource_page.html', title='Resource Page', posts=posts)
