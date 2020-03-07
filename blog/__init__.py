@@ -8,12 +8,14 @@ from flask_ckeditor import CKEditor
 from blog.config import Config
 from flask_admin import Admin
 from flask_login import LoginManager
+from flask_share import Share
 
 
 db = SQLAlchemy()
 ckeditor = CKEditor()
 admin = Admin()
 migrate = Migrate()
+share = Share()
 
 
 
@@ -35,6 +37,7 @@ def create_app(config_class=Config):
     admin.init_app(app, index_view=MyAdminIndexView())
     ckeditor.init_app(app)
     login_manager.init_app(app)
+    share.init_app(app)
 
     from blog.main.routes import main
     from blog.posts.routes import posts

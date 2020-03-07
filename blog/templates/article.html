@@ -35,6 +35,15 @@
         <div >
           <!-- Post Content -->
           {{ posts.article | safe}}
+
+          <div class="row">
+            <div class="col-sm-4"></div>
+            <div class="col-md-4">
+              {{ share.create(title='', sites='facebook, twitter, linkedin') }}
+            </div>
+            <div class="col-md-4"></div>
+          </div>
+          
         </div>
       <hr>
 
