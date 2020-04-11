@@ -48,16 +48,20 @@
             </div>
             
             <div class="col-md-4">
-                <div class="my-banner">
-                    <iframe src="//rcm-na.amazon-adsystem.com/e/cm?o=1&p=12&l=ez&f=ifr&linkID=de373247f61188893419ef013dfdf4d6&t=etim0f-20&tracking_id=etim0f-20" width="300" height="250" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
-                </div>
+
+                <!--
+                    <div class="my-banner">
+                        <iframe src="//rcm-na.amazon-adsystem.com/e/cm?o=1&p=12&l=ez&f=ifr&linkID=de373247f61188893419ef013dfdf4d6&t=etim0f-20&tracking_id=etim0f-20" width="300" height="250" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
+                    </div>
+                -->
+               
                
 
                 <div class="card my-card" style="width: 18rem;">
                     <div class="card-body">
                         <h5>Popular Posts</h5>
                         {% for post in post %}
-                            {% if post.comment.count() == 0 %}
+                            {% if post.comment.count() >= 1 %}
                             <p style="margin-bottom: 5px;"><a href="{{ url_for('posts.article', slug=post.slug) }}">* {{post.title}}</a></p>
                             {% endif %}
                         {% endfor %}
