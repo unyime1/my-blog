@@ -55,7 +55,7 @@
                     <div class="card-body">
                         <h5>Popular Posts</h5>
                         {% for post in posts %}
-                            {% if post.comment.count() == 0 %}
+                            {% if post.comment.count() >= 1 %}
                             <p style="margin-bottom: 5px;"><a href="{{ url_for('posts.article', slug=post.slug) }}">* {{post.title}}</a></p>
                             {% endif %}
                         {% endfor %}
