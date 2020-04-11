@@ -82,28 +82,31 @@
 
   <!---Display Comments-->
   <h3>Comments</h3>
-  {% if posts.comment %}
-  {% for comment in posts.comment %}
-    <div class="row">
-      <div class="col-md-6 card mb-4">
-        <hr>
-          {% if comment.website %}
-          <p><a href="http://{{comment.website}}" rel="nofollow" target="_blank"> {{ comment.name }}</a> on {{comment.date_posted.strftime('%d %b %Y')}}</p>
-            
-          {% else %}
-            <p>
-              {{comment.name}} on
-              {{comment.date_posted.strftime('%d %b %Y')}}
-            </p>
-          {% endif %}
-          <p>{{comment.content}}</p>
-        <hr>
-        {% if comment.comment_reply %}
-          <p style="font-style: italic;">{{comment.comment_reply}}</p>
-        {% endif %}
-      </div>
-    </div>
-  {% endfor %}
+  {% if posts.comment%}       <!-- Check if comments exist for this post-->
+    {% for comment in posts.comment %}    <!-- Loop through all the comments that exist-->
+      {% if comment.comment_reply %}      <!-- Check for the comments that have replies-->
+        <div class="row">
+          <div class="col-md-6 card mb-4">
+            <hr>
+              {% if comment.website %}
+              <p><a href="http://{{comment.website}}" rel="nofollow" target="_blank"> {{ comment.name }}</a> on {{comment.date_posted.strftime('%d %b %Y')}}</p>
+                
+              {% else %}
+                <p>
+                  {{comment.name}} on
+                  {{comment.date_posted.strftime('%d %b %Y')}}
+                </p>
+              {% endif %}
+              <p>{{comment.content}}</p>
+            <hr>
+            {% if comment.comment_reply %}
+              <p style="font-style: italic;">{{comment.comment_reply}}</p>
+            {% endif %}
+          </div>
+        </div>
+      {% endif %}
+      
+    {% endfor %}
   {% endif %}
 
 

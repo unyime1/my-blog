@@ -36,7 +36,7 @@ def article(slug):
         comment = Comment(name=bleach.clean(form.name.data), website=bleach.clean(form.website.data), content=bleach.clean(form.content.data), post_id=posts.id)
         db.session.add(comment)
         db.session.commit()
-        flash('Your comment has been published','success')
+        flash('Hi, thanks for your letting us know your thought! We have just received your comment and it has been submitted to our moderators for review.','success')
         return redirect(url_for('main.home'))
     return render_template('article.html', posts=posts, form=form, title=posts.title, post=post)  
    

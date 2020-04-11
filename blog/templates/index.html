@@ -1,17 +1,33 @@
 {% extends 'layout.html' %}
 {% block content %}
 
+
+  
+  <div class="row">
+    <div class="col-md-12">
+      {% with messages = get_flashed_messages(with_categories=true) %}  <!-- store flashed messages and their categories in the variable messages-->
+        {% if messages %}   <!-- if there is a flash message -->
+          {% for category, message in messages %} <!-- loop through the messages and their categories -->
+              <div class="alert alert-{{ category }}">
+                  {{ message }}   <!-- print the messages with the bootstrap themed category -->
+              </div>
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+    </div>
+  </div>
+
   {% for post in posts %}
     <div class="card mb-4">
       <div class="card-body">
         <h5 class="card-title my-post-card">{{post.title | safe}}</h5>
         <p class="card-text"></p>
-        <a href="{{url_for('posts.article', slug=post.slug)}}" class="btn btn-primary my-post-btn">Discover &rarr;</a>
+        <a href="{{url_for('posts.article', slug=post.slug)}}" class="btn btn-primary my-post-btn">Read More &rarr;</a>
       </div>
       <div class="card-footer text-muted">
       <p>
         Posted on {{ post.date_posted.strftime('%d %b %Y') }} by  
-        {{post.author | safe}} ({{post.comment.count()}} Comments)
+        {{post.author | safe}}
       </p>
       </div>
     </div>
