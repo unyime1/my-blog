@@ -65,6 +65,12 @@ def privacy():
     return render_template('privacy.html', title='Privacy Policy', posts=posts, directive='noindex')
 
 
+@main.route("/terms")
+def terms():
+    #Terms and Conditions
+    posts = Post.query.all()
+    return render_template('terms.html', title='Terms and Conditions', posts=posts, directive='noindex')
+
 @main.route("/sitemap.xml")
 def sitemap():
     #sitemap route
