@@ -213,7 +213,13 @@ nav{
     color: var(--main-white);
 }
 
+/*
 li{
+     list-style: none; 
+}
+*/
+
+.footer-lists{
     list-style: none;
 }
 
