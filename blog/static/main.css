@@ -1,5 +1,6 @@
 :root{
     --main-white:  beige;
+    --second-white: rgb(243, 243, 183);
     --main-blue:  rgb(10, 64, 114); 
     --minor-blue: rgb(7, 77, 143); 
     --intro-font: 'Raleway', sans-serif;
@@ -26,6 +27,16 @@ h2{
     font-weight: 400;
     text-align: center;
 }
+
+.intro-talk{
+    margin-top: 2rem;
+}
+
+.mailchimp {
+    margin-top: 1rem;
+}
+
+
 
 .navbar-texts{
     position: relative;
@@ -91,7 +102,7 @@ nav{
 }
 
 #contact-section{
-    background-color: var( --main-white);
+    background-color: var( --second-white);
     display: flex;
     flex-direction: column;
     justify-content: center;
