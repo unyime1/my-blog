@@ -22,11 +22,16 @@ def portfolio():
     return render_template('portfolio.html', form=form)
 
 @main.route("/") 
+def landing():
+    #landing page
+    posts = Post.query.order_by(Post.date_posted.desc())
+    return render_template('landing_page.html', posts=posts, title='Home')
+
 @main.route("/home")
 def home():
     #site home
     posts = Post.query.order_by(Post.date_posted.desc())
-    return render_template('index.html', posts=posts, title='Home')
+    return render_template('home.html', posts=posts, title='Blog')
 
 @main.route("/about")
 def about():

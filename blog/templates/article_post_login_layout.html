@@ -80,7 +80,7 @@
     <footer id="document-footer">
         <div id="document-footer-content">
             <ul id="my-footer-links">
-                <li class="footer-lists"><a class="footer-links" href="{{ url_for('main.home') }}">Home</a></li>
+                <li class="footer-lists"><a class="footer-links" href="{{ url_for('main.landing') }}">Home</a></li>
                 <li class="footer-lists"><a class="footer-links" href="{{ url_for('main.about') }}">About</a></li>
                 <li class="footer-lists"><a class="footer-links" href="{{ url_for('main.contact') }}">Contact</a></li>
                 <li class="footer-lists"><a class="footer-links" href="{{url_for('main.privacy')}}">Privacy Policy</a></li>
@@ -89,7 +89,7 @@
                 <li class="footer-lists"><a class="footer-links" href="{{url_for('posts.post')}}">Post</a></li>
                 <li class="footer-lists"><a class="footer-links" href="{{url_for('users.logout')}}">Logout</a></li>
                 <li class="footer-lists"><a class="footer-links" href="{{url_for('main.admin')}}">Admin</a></li>
-                {% endif %}
+                {% endif %} 
                
             </ul>
             <p class="copyright">&copy; 2020<strong> Unyime Etim</strong>. All Rights Reserved</p>
