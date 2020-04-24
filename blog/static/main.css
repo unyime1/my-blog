@@ -240,24 +240,9 @@ li{
         margin-left: auto;
         margin-right: auto;
     }
+   
 }
 
-@media (max-width: 1000px) {
-    /*.card{
-        margin-left: auto;
-        margin-right: auto;
-        
-    }
-    #my-banner{
-        margin-left: auto !important;
-        margin-right: auto !important;
-        
-    }
-    */
-    #my-banner > img{
-        width: auto;
-    }
-}
 
 .box-shadow-full {
     padding: 3rem 1.25rem;
